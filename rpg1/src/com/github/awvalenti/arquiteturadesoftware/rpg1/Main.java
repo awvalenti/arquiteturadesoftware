@@ -1,13 +1,13 @@
 // Leia o código abaixo e responda às seguintes questões:
 //
 //
-// 1) Do ponto de vista do usuário, que problemas existem no jogo ?
+// 1) Do ponto de vista do usuário, que problemas existem no jogo?
 //
 //
 // 2) Do ponto de vista do programador, que problemas existem no jogo?
 //
 //
-// 3) Diga em que linhas do arquivo Main.java está localizada a lógica que cuida de:
+// 3) Diga em que linhas do código está localizada a lógica que cuida de:
 // 	a) Carregar as imagens usadas no jogos
 // 	b) Definir a quantidade de linhas e colunas do tabuleiro
 // 	c) Manipular o objeto JFrame, que representa a janela do jogo
