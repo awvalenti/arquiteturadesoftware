@@ -23,7 +23,7 @@
 // 	d) Criar novas fases, com mais maçãs
 // 	e) Criar novas fases, com tamanho maior do que 10x15
 //
-package com.github.awvalenti.arquiteturadesoftware.rpg1;
+package com.github.awvalenti.arquiteturadesoftware.rpg1.versao1.procedimental;
 
 import java.awt.GridLayout;
 import java.awt.event.KeyEvent;
