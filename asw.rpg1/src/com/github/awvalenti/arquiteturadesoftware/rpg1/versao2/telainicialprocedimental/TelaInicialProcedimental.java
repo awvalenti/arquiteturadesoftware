@@ -10,8 +10,6 @@ import javax.swing.JLabel;
 
 public class TelaInicialProcedimental {
 
-	int coletados;
-
 	public static void main(String[] args) throws IOException {
 		final JFrame frame = new JFrame();
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
