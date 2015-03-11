@@ -37,12 +37,7 @@ public class TelaInicialOO {
 	}
 
 	public void alterarElemento(int linha, int coluna, Elemento novoElemento) {
-		try {
-			((JLabel) frame.getContentPane().getComponent(linha * numeroColunas + coluna)).setIcon(new ImageIcon(ImageIO.read(Main.class.getResourceAsStream(novoElemento.getCaminhoImagem()))));
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		((JLabel) frame.getContentPane().getComponent(linha * numeroColunas + coluna)).setIcon(novoElemento.getIcone());
 	}
 
 }
