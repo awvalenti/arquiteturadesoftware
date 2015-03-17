@@ -37,7 +37,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
-public class Main {
+public class MainProcedimental {
 
 	int coletados;
 
@@ -46,7 +46,7 @@ public class Main {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setLayout(new GridLayout(10, 15));
 
-		final Main main = new Main();
+		final MainProcedimental main = new MainProcedimental();
 
 		final int[][] posicoes = {
 				{3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 0, 0, 0, 0},
@@ -64,16 +64,16 @@ public class Main {
 		for (int i = 0; i < 10; i++) {
 			for (int j = 0; j < 15; j++) {
 				if (posicoes[i][j] == 0) {
-					frame.add(new JLabel(new ImageIcon(ImageIO.read(Main.class.getResourceAsStream("/agua.png")))));
+					frame.add(new JLabel(new ImageIcon(ImageIO.read(MainProcedimental.class.getResourceAsStream("/agua.png")))));
 				}
 				if (posicoes[i][j] == 1) {
-					frame.add(new JLabel(new ImageIcon(ImageIO.read(Main.class.getResourceAsStream("/maca.png")))));
+					frame.add(new JLabel(new ImageIcon(ImageIO.read(MainProcedimental.class.getResourceAsStream("/maca.png")))));
 				}
 				if (posicoes[i][j] == 2) {
-					frame.add(new JLabel(new ImageIcon(ImageIO.read(Main.class.getResourceAsStream("/personagem.png")))));
+					frame.add(new JLabel(new ImageIcon(ImageIO.read(MainProcedimental.class.getResourceAsStream("/personagem.png")))));
 				}
 				if (posicoes[i][j] == 3) {
-					frame.add(new JLabel(new ImageIcon(ImageIO.read(Main.class.getResourceAsStream("/grama.png")))));
+					frame.add(new JLabel(new ImageIcon(ImageIO.read(MainProcedimental.class.getResourceAsStream("/grama.png")))));
 				}
 			}
 		}
@@ -168,10 +168,10 @@ public class Main {
 			private Icon icone(int i) {
 				try {
 					switch (i) {
-					case 0: return new ImageIcon(ImageIO.read(Main.class.getResourceAsStream("/agua.png")));
-					case 1: return new ImageIcon(ImageIO.read(Main.class.getResourceAsStream("/maca.png")));
-					case 2: return new ImageIcon(ImageIO.read(Main.class.getResourceAsStream("/personagem.png")));
-					case 3: return new ImageIcon(ImageIO.read(Main.class.getResourceAsStream("/grama.png")));
+					case 0: return new ImageIcon(ImageIO.read(MainProcedimental.class.getResourceAsStream("/agua.png")));
+					case 1: return new ImageIcon(ImageIO.read(MainProcedimental.class.getResourceAsStream("/maca.png")));
+					case 2: return new ImageIcon(ImageIO.read(MainProcedimental.class.getResourceAsStream("/personagem.png")));
+					case 3: return new ImageIcon(ImageIO.read(MainProcedimental.class.getResourceAsStream("/grama.png")));
 					default: throw new IllegalArgumentException("" + i);
 					}
 				} catch (Exception e) {
