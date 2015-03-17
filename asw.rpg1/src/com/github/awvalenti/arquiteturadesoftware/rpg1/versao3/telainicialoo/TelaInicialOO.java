@@ -8,8 +8,6 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-import com.github.awvalenti.arquiteturadesoftware.rpg1.versao1.procedimental.Main;
-
 public class TelaInicialOO {
 	final JFrame frame = new JFrame();
 	private int numeroLinhas;
