@@ -1,4 +1,4 @@
-package com.github.awvalenti.arquiteturadesoftware.rpg1.versao4;
+package com.github.awvalenti.arquiteturadesoftware.rpg1.versao4.passagem;
 
 public enum Elemento {
 

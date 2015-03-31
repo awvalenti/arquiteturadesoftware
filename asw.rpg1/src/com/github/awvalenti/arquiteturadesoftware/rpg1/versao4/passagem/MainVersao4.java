@@ -1,6 +1,6 @@
-package com.github.awvalenti.arquiteturadesoftware.rpg1.versao4;
+package com.github.awvalenti.arquiteturadesoftware.rpg1.versao4.passagem;
 
-import static com.github.awvalenti.arquiteturadesoftware.rpg1.versao4.Elemento.*;
+import static com.github.awvalenti.arquiteturadesoftware.rpg1.versao4.passagem.Elemento.*;
 
 public class MainVersao4 {
 
