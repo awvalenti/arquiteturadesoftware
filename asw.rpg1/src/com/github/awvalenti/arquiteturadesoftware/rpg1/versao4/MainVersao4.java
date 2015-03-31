@@ -2,7 +2,7 @@ package com.github.awvalenti.arquiteturadesoftware.rpg1.versao4;
 
 import static com.github.awvalenti.arquiteturadesoftware.rpg1.versao4.Elemento.*;
 
-public class MainOO {
+public class MainVersao4 {
 
 	public static void main(String[] args) {
 		final Elemento[][] disposicaoInicial1 = {
