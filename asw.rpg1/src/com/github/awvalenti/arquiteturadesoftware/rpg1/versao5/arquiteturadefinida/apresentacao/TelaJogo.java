@@ -33,7 +33,6 @@ public class TelaJogo implements SaidaJogo {
 		frame.pack();
 		frame.setLocationRelativeTo(null);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setVisible(true);
 	}
 
 	private void preencherTela() {
@@ -45,9 +44,8 @@ public class TelaJogo implements SaidaJogo {
 	}
 
 	@Override
-	public void perderJogo() {
-		JOptionPane.showMessageDialog(frame, "Perdeu!", "Perdeu!", JOptionPane.ERROR_MESSAGE);
-		System.exit(0);
+	public void iniciarJogo() {
+		frame.setVisible(true);
 	}
 
 	@Override
@@ -59,6 +57,12 @@ public class TelaJogo implements SaidaJogo {
 	@Override
 	public void passarDeFase() {
 		JOptionPane.showMessageDialog(frame, "Ganhou!", "Ganhou!", JOptionPane.INFORMATION_MESSAGE);
+		System.exit(0);
+	}
+
+	@Override
+	public void perderJogo() {
+		JOptionPane.showMessageDialog(frame, "Perdeu!", "Perdeu!", JOptionPane.ERROR_MESSAGE);
 		System.exit(0);
 	}
 

@@ -2,6 +2,8 @@ package com.github.awvalenti.arquiteturadesoftware.rpg1.versao5.arquiteturadefin
 
 public interface SaidaJogo {
 
+	void iniciarJogo();
+
 	void alterarElemento(Posicao posicao, Elemento novo);
 
 	void passarDeFase();

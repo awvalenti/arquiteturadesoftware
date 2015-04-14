@@ -4,7 +4,7 @@ public class Tabuleiro {
 
 	private Elemento[][] matriz;
 	private SaidaJogo saida;
-	private Posicao posicaoDoPortal;
+	private Posicao posicaoDoPortalOculto;
 
 	public Tabuleiro(Elemento[][] matriz) {
 		this.matriz = matriz;
@@ -16,6 +16,7 @@ public class Tabuleiro {
 
 	public void iniciarJogo() {
 		ocultarPortal();
+		saida.iniciarJogo();
 	}
 
 	public int getNumeroLinhas() {
@@ -31,7 +32,7 @@ public class Tabuleiro {
 	}
 
 	public void fazerMovimento(Direcao d) {
-		Posicao posicaoAntiga = posicaoDoPersonagem();
+		Posicao posicaoAntiga = acharPosicaoDe(Elemento.PERSONAGEM);
 		Posicao posicaoNova = posicaoAntiga.somar(d);
 
 		if (posicaoEhInvalida(posicaoNova)) return;
@@ -47,9 +48,7 @@ public class Tabuleiro {
 			break;
 
 		case MACA:
-			if (quantidadeMacasRestantes() == 0) {
-				alterarElemento(posicaoDoPortal, Elemento.PORTAL);
-			}
+			if (quantidadeMacasRestantes() == 0) reexibirPortal();
 			break;
 
 		case PORTAL:
@@ -63,21 +62,17 @@ public class Tabuleiro {
 	}
 
 	private void ocultarPortal() {
-		posicaoDoPortal = posicaoDoPortal();
-		alterarElemento(posicaoDoPortal, Elemento.GRAMA);
+		posicaoDoPortalOculto = acharPosicaoDe(Elemento.PORTAL);
+		alterarElemento(posicaoDoPortalOculto, Elemento.GRAMA);
+	}
+
+	private void reexibirPortal() {
+		alterarElemento(posicaoDoPortalOculto, Elemento.PORTAL);
 	}
 
 	private void alterarElemento(Posicao posicao, Elemento e) {
 		matriz[posicao.getLinha()][posicao.getColuna()] = e;
 		saida.alterarElemento(posicao, e);
-	}
-
-	private Posicao posicaoDoPersonagem() {
-		return acharPosicaoDoElemento(Elemento.PERSONAGEM);
-	}
-
-	private Posicao posicaoDoPortal() {
-		return acharPosicaoDoElemento(Elemento.PORTAL);
 	}
 
 	private int quantidadeMacasRestantes() {
@@ -92,7 +87,7 @@ public class Tabuleiro {
 		return ret;
 	}
 
-	private Posicao acharPosicaoDoElemento(Elemento elemento) {
+	private Posicao acharPosicaoDe(Elemento elemento) {
 		for (int i = 0; i < matriz.length; i++) {
 			for (int j = 0; j < matriz[i].length; j++) {
 				if (matriz[i][j] == elemento) {
