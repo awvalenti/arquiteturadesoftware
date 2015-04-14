@@ -1,4 +1,4 @@
-package com.github.awvalenti.arquiteturadesoftware.rpg1.versao5.arquiteturadefinida;
+package com.github.awvalenti.arquiteturadesoftware.rpg1.versao5.arquiteturadefinida.apresentacao;
 
 import java.awt.GridLayout;
 import java.awt.event.KeyEvent;
@@ -7,6 +7,12 @@ import java.awt.event.KeyListener;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+
+import com.github.awvalenti.arquiteturadesoftware.rpg1.versao5.arquiteturadefinida.logicajogo.Direcao;
+import com.github.awvalenti.arquiteturadesoftware.rpg1.versao5.arquiteturadefinida.logicajogo.Elemento;
+import com.github.awvalenti.arquiteturadesoftware.rpg1.versao5.arquiteturadefinida.logicajogo.Posicao;
+import com.github.awvalenti.arquiteturadesoftware.rpg1.versao5.arquiteturadefinida.logicajogo.SaidaJogo;
+import com.github.awvalenti.arquiteturadesoftware.rpg1.versao5.arquiteturadefinida.logicajogo.Tabuleiro;
 
 public class TelaJogo implements SaidaJogo {
 

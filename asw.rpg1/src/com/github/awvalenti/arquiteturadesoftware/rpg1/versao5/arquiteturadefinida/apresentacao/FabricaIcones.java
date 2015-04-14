@@ -1,10 +1,12 @@
-package com.github.awvalenti.arquiteturadesoftware.rpg1.versao5.arquiteturadefinida;
+package com.github.awvalenti.arquiteturadesoftware.rpg1.versao5.arquiteturadefinida.apresentacao;
 
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+
+import com.github.awvalenti.arquiteturadesoftware.rpg1.versao5.arquiteturadefinida.logicajogo.Elemento;
 
 public class FabricaIcones {
 

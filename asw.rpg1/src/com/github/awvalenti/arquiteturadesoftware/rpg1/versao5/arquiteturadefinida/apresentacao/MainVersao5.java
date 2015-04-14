@@ -1,6 +1,9 @@
-package com.github.awvalenti.arquiteturadesoftware.rpg1.versao5.arquiteturadefinida;
+package com.github.awvalenti.arquiteturadesoftware.rpg1.versao5.arquiteturadefinida.apresentacao;
 
-import static com.github.awvalenti.arquiteturadesoftware.rpg1.versao5.arquiteturadefinida.Elemento.*;
+import static com.github.awvalenti.arquiteturadesoftware.rpg1.versao5.arquiteturadefinida.logicajogo.Elemento.*;
+
+import com.github.awvalenti.arquiteturadesoftware.rpg1.versao5.arquiteturadefinida.logicajogo.Elemento;
+import com.github.awvalenti.arquiteturadesoftware.rpg1.versao5.arquiteturadefinida.logicajogo.Tabuleiro;
 
 public class MainVersao5 {
 
