@@ -1,0 +1,24 @@
+Leia o codigo desta versao 1 e responda 'as seguintes perguntas:
+
+1) As classes existentes no codigo sao as que voce esperava encontrar
+   quando usou o aplicativo?
+
+2) Liste 5 ou mais problemas existentes no codigo do aplicativo.
+
+3) Para cada item abaixo, diga que partes do codigo estao diretamente
+   relacionadas:
+   a) Banco de dados
+   b) Clique de mouse
+   c) Mudanca de estado da tela
+   d) Obtencao do diretorio de arquivos temporarios
+   e) Tamanho da lousa (largura e altura)
+
+4) Para cada modificacao sugerida abaixo, diga que partes do codigo serao
+   afetadas:
+   a) Oferecer mais cores
+   b) Desfazer (CTRL+Z)
+   c) Apagar
+   d) Salvar como imagem
+   e) Limpar tela
+   f) Permitir escolher o tamanho do quadro
+   g) Corrigir o defeito de que o primeiro ponto nao permanece pintado
