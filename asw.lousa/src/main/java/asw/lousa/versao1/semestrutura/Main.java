@@ -9,8 +9,11 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.persistence.Entity;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 import javax.persistence.TypedQuery;
@@ -85,4 +88,13 @@ public class Main {
 		frame.setVisible(true);
 	}
 
+}
+
+@Entity
+class CelulaPreenchida {
+	@Id
+	@GeneratedValue
+	private Long id;
+
+	Integer i, j;
 }
