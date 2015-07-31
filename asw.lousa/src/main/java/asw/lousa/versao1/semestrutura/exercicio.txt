@@ -1,4 +1,4 @@
-Leia o codigo desta versao 1 e responda 'as seguintes perguntas:
+Leia o codigo desta versao 1 e responda as seguintes perguntas:
 
 1) As classes existentes no codigo sao as que voce esperava encontrar
    quando usou o aplicativo?
@@ -13,8 +13,10 @@ Leia o codigo desta versao 1 e responda 'as seguintes perguntas:
    d) Obtencao do diretorio de arquivos temporarios
    e) Tamanho da lousa (largura e altura)
 
-4) Para cada modificacao sugerida abaixo, diga que partes do codigo serao
-   afetadas:
+4) Para cada modificacao sugerida abaixo:
+   - Diga que partes do codigo serao afetadas
+   - Ordene-as da mais facil para a mais dificil de fazer
+
    a) Oferecer mais cores
    b) Desfazer (CTRL+Z)
    c) Apagar
