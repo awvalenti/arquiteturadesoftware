@@ -19,7 +19,7 @@ Leia o codigo desta versao 1 e responda as seguintes perguntas:
 
    a) Oferecer mais cores
    b) Desfazer (CTRL+Z)
-   c) Apagar
+   c) Apagar celula
    d) Salvar como imagem
    e) Limpar tela
    f) Permitir escolher o tamanho do quadro
