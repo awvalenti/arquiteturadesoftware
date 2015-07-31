@@ -20,7 +20,7 @@ Leia o codigo desta versao 1 e responda as seguintes perguntas:
    a) Oferecer mais cores
    b) Desfazer (CTRL+Z)
    c) Apagar celula
-   d) Salvar como imagem
-   e) Limpar tela
+   d) Limpar lousa inteira
+   e) Salvar como imagem
    f) Permitir escolher o tamanho do quadro
    g) Corrigir o defeito de que o primeiro ponto nao permanece pintado
