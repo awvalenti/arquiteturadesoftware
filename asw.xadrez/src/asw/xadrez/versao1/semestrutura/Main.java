@@ -37,7 +37,7 @@ public class Main {
 				label.addMouseListener(new MouseAdapter() {
 					@Override
 					public void mousePressed(MouseEvent e) {
-						// Quando botao do mouse for preesionado
+						// Quando botao do mouse for pressionado
 
 						boolean selec = false;
 						// janela.getContentPane().getComponentCount() obtem o numero de componentes
