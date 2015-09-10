@@ -25,16 +25,25 @@ public class Main {
 	public static void main(String[] args) {
 		
 		TelaInicial.exibeTela();
-		
-
-		
+				
 	} 
+	
 	public static void jogoOffline(){
 		Tabuleiro tabuleiro = new Tabuleiro();			
 		JFrame janela = criarJanela();
-		MouseAdapter tratadorCliques = new TratadorCliques();
+		
+		MouseAdapter tratadorCliques = new TratadorCliquesOffline(tabuleiro);
+		
 		preencherJanelaComCasas(tabuleiro, janela, tratadorCliques);
+		
 		exibirJanela(janela);
+	}
+	
+	public static void atualizaJanela(Tabuleiro tabuleiro, JFrame janela,
+			MouseAdapter tratadorCliques){
+		janela.dispose();
+		preencherJanelaComCasas(tabuleiro, janela, tratadorCliques);
+		
 	}
 
 		private static JFrame criarJanela() {
@@ -57,6 +66,7 @@ public class Main {
 				label.setVerticalAlignment(JLabel.CENTER);
 				label.setOpaque(true);
 				label.addMouseListener(tratadorCliques);
+				label.setName(i + "," + j); // possibilita nomear cada label com sua posição no grid
 				janela.add(label);
 			}
 		}

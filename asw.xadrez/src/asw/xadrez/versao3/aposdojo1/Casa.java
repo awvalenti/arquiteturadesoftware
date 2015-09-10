@@ -11,4 +11,8 @@ public class Casa {
 	public Peca getPeca() {
 		return peca;
 	}
+	
+	public void setPeca(Peca peca) {
+		this.peca = peca;
+	}
 }
