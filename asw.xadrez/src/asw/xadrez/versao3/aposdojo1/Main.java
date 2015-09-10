@@ -6,6 +6,9 @@ import java.awt.Color;
 import java.awt.GridLayout;
 
 import java.awt.event.MouseAdapter;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
 import java.util.HashMap;
 
 import javax.swing.JFrame;
@@ -33,7 +36,7 @@ public class Main {
 		Tabuleiro tabuleiro = new Tabuleiro();			
 		JFrame janela = criarJanela();
 
-		TratadorCliquesOffline tratadorCliques = new TratadorCliquesOffline(tabuleiro);
+		TratadorCliquesOffline tratadorCliques = new TratadorCliquesOffline(tabuleiro,new BufferedReader(new InputStreamReader(System.in)),new PrintWriter(System.out), labels );
 		tratadorCliques.setHabilita(true);
 		preencherJanelaComCasas(tabuleiro, janela, tratadorCliques);
 
@@ -52,22 +55,26 @@ public class Main {
 		ServidorXadrez servidor = new ServidorXadrez(PORTA_ENET);
 
 		Tabuleiro tabuleiro = new Tabuleiro();			
-		JFrame janela = criarJanela();		
-		MouseAdapter tratadorCliques = new TratadorCliquesOffline(tabuleiro);		
+		JFrame janela = criarJanela();	
+		servidor.aguardaConexao();
+		while (!servidor.isProntoParaJogar()){}
+		TratadorCliquesOffline tratadorCliques = new TratadorCliquesOffline(tabuleiro,servidor.getEntrada(),servidor.getSaida(), labels );	
 		preencherJanelaComCasas(tabuleiro, janela, tratadorCliques);		
 		exibirJanela(janela);
-		servidor.aguardaConexao();
+		
+		tratadorCliques.setHabilita(true);
 		
 	}
 	public static void jogoCliente(){
 		ClienteXadrez cliente = new ClienteXadrez(PORTA_ENET);
 		//cliente.aguardaConexao();
+		
 		Tabuleiro tabuleiro = new Tabuleiro();			
 		JFrame janela = criarJanela();		
-		MouseAdapter tratadorCliques = new TratadorCliquesOffline(tabuleiro);		
+		TratadorCliquesOffline tratadorCliques = new TratadorCliquesOffline(tabuleiro,null,new PrintWriter(System.out), labels );		
 		preencherJanelaComCasas(tabuleiro, janela, tratadorCliques);		
 		exibirJanela(janela);
-
+		tratadorCliques.setHabilita(true);
 	}
 
 

@@ -8,13 +8,25 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class ServidorXadrez {
-	private PrintWriter saidaServidor;
-	private BufferedReader entradaServidor;
+public class ServidorXadrez{
+	public PrintWriter saidaServidor;
+	public BufferedReader entradaServidor;
 	private static JFrame telaServidor;
 	private int porta;
 	private JLabel label;
-
+	private ServerSocket socketServidor;
+	private Socket clientSocket;
+	boolean prontoParaJogar = false;
+	
+	public boolean isProntoParaJogar() {
+		return prontoParaJogar;
+	}
+	public PrintWriter getSaida() {
+		return saidaServidor;
+	}
+	public BufferedReader getEntrada() {
+		return entradaServidor;
+	}
 	public ServidorXadrez(int porta) {
 		this.porta = porta;
 
@@ -33,21 +45,22 @@ public class ServidorXadrez {
 
 
 	}
-
+	public void encerraConexao() throws IOException{
+		socketServidor.close();
+	}
 	public void aguardaConexao(){ 
-		Runnable runnable = new Runnable() {
-			public void run() {
-				try ( 
-
-						ServerSocket socketServidor = new ServerSocket(porta);
-						Socket clientSocket = socketServidor.accept();
-
-						) {
+	/*	Runnable runnable = new Runnable() {
+			public void run() {*/
+				try {
+					socketServidor = new ServerSocket(porta);
+					clientSocket = socketServidor.accept();
+					
+					System.out.println("Conectou!");
 					saidaServidor = new PrintWriter(clientSocket.getOutputStream(), true);
 					entradaServidor = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
-
-
-
+					
+					prontoParaJogar = true;
+					saidaServidor.println("Bem Vindo");
 					// Initiate conversation with client
 
 					//outputLine = kkp.processInput(null);
@@ -63,12 +76,14 @@ public class ServidorXadrez {
 
 			}
 
-			
 
-		};
-		new Thread(runnable).start();
+
+		//};
+		//new Thread(runnable).start();
+	//}
 		
-	}
+
+	//}
 	public void trataConexao() throws IOException{
 		String inputLine, outputLine;
 		while ((inputLine = entradaServidor.readLine()) != null) {
