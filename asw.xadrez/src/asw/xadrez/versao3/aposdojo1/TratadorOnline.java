@@ -3,17 +3,17 @@ package asw.xadrez.versao3.aposdojo1;
 import static asw.xadrez.versao3.aposdojo1.Cor.INDEFINIDO;
 import static asw.xadrez.versao3.aposdojo1.TipoDePeca.NULO;
 
-import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.BufferedReader;
 
 import javax.swing.JLabel;
 
-final class TratadorCliquesOffline extends MouseAdapter {
+public class TratadorOnline {
 	private JLabel casaOrigem;
 	public boolean habilita = false;
 	
 	Tabuleiro tabuleiro;
-	public TratadorCliquesOffline (Tabuleiro tabuleiro) {
+	public TratadorOnline (Tabuleiro tabuleiro) {
 		this.tabuleiro = tabuleiro;
 		
 	}
@@ -23,10 +23,10 @@ final class TratadorCliquesOffline extends MouseAdapter {
 	public void setHabilita(boolean habilita) {
 		this.habilita = habilita;
 	}
-	@Override
-	public void mousePressed(MouseEvent e) {
+	
+	public void trataOnline(BufferedReader entradaOnline) {
 		if (habilita){
-		JLabel casaClicada = (JLabel) e.getSource();
+		JLabel casaClicada = new JLabel();
 
 		if (nenhumaCasaSelecionada()) {
 			if (casaClicada.getText().equals(Main.CASA_VAZIA)) return;

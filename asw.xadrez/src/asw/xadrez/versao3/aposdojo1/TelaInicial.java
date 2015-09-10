@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
@@ -14,7 +15,7 @@ public class TelaInicial implements ActionListener {
 	protected static JFrame telaInicial;
 	public static void exibeTela() {
 
-		telaInicial = new JFrame("Test");	
+		telaInicial = new JFrame("Xadrez - Início");	
 		telaInicial.setVisible(true);
 		telaInicial.setLocationRelativeTo(null);
 		telaInicial.setSize(500,100);
@@ -57,14 +58,17 @@ public class TelaInicial implements ActionListener {
 	}
 	static class acaoIniciarServidor implements ActionListener {        
 		public void actionPerformed (ActionEvent e) {
-			Main.jogoOffline();
 			telaInicial.setVisible(false);
+			Main.jogoServidor();
+			
+			
 		}
 	}
 	static class acaoIniciarCliente implements ActionListener {        
 		public void actionPerformed (ActionEvent e) {
-			Main.jogoOffline();
+			
 			telaInicial.setVisible(false);
+			Main.jogoCliente();
 		}
 	}
 
