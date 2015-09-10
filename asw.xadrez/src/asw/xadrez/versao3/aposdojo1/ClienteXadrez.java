@@ -96,7 +96,7 @@ public class ClienteXadrez {
 
 	static class acaoBotaoConecta implements ActionListener {        
 		public void actionPerformed (ActionEvent e) {
-			botaoConecta.setText("Conectando.");
+			botaoConecta.setText("Conectando.");			
 			conectaCliente(hostServidor.getText());
 
 		}

@@ -60,7 +60,7 @@ public class ServidorXadrez{
 					entradaServidor = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
 					
 					prontoParaJogar = true;
-					saidaServidor.println("Bem Vindo");
+					//saidaServidor.println("Bem Vindo");
 					// Initiate conversation with client
 
 					//outputLine = kkp.processInput(null);

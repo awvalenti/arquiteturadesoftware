@@ -66,12 +66,14 @@ public class Main {
 		
 	}
 	public static void jogoCliente(){
+		
 		ClienteXadrez cliente = new ClienteXadrez(PORTA_ENET);
 		//cliente.aguardaConexao();
 		
 		Tabuleiro tabuleiro = new Tabuleiro();			
-		JFrame janela = criarJanela();		
-		TratadorCliquesOffline tratadorCliques = new TratadorCliquesOffline(tabuleiro,null,new PrintWriter(System.out), labels );		
+		JFrame janela = criarJanela();	
+		
+		TratadorCliquesOffline tratadorCliques = new TratadorCliquesOffline(tabuleiro,cliente.getEntrada(),cliente.getSaida(), labels );		
 		preencherJanelaComCasas(tabuleiro, janela, tratadorCliques);		
 		exibirJanela(janela);
 		tratadorCliques.setHabilita(true);

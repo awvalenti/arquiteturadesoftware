@@ -26,7 +26,7 @@ public class TelaInicial implements ActionListener {
 		
 		JButton botaoJogoOffline = new JButton("Jogo Local");
 		
-		painelTelaInicial.add(botaoJogoOffline);
+		//painelTelaInicial.add(botaoJogoOffline);
 		botaoJogoOffline.addActionListener (new acaoJogoOffline());
 
 		JButton botaoJogoServidor = new JButton("Jogo em Rede - Servidor");
