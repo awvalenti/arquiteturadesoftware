@@ -1,11 +1,16 @@
 package asw.xadrez.versao3.aposdojo1;
 
+
 import java.awt.Color;
+
 import java.awt.GridLayout;
+
 import java.awt.event.MouseAdapter;
+
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+
 
 public class Main {
 
@@ -18,14 +23,17 @@ public class Main {
 	static final String CASA_VAZIA = "_";
 
 	public static void main(String[] args) {
-		Tabuleiro tabuleiro = new Tabuleiro();
 		
+		TelaInicial.exibeTela();
+		
+
+		
+	} 
+	public static void jogoOffline(){
+		Tabuleiro tabuleiro = new Tabuleiro();			
 		JFrame janela = criarJanela();
-
 		MouseAdapter tratadorCliques = new TratadorCliques();
-
 		preencherJanelaComCasas(tabuleiro, janela, tratadorCliques);
-
 		exibirJanela(janela);
 	}
 
