@@ -6,6 +6,9 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class CamadaDadosDiretorioTemp implements CamadaDados {
 
@@ -62,6 +65,12 @@ public class CamadaDadosDiretorioTemp implements CamadaDados {
 			return "aconteceu algum erro no carregamento do arquivo";
 			// throw new RuntimeException(e);
 		}
+	}
+
+	@Override
+	public List<String> listarMensagens() {
+		
+		return  Arrays.asList(getDiretorio().list());
 	}
 
 }

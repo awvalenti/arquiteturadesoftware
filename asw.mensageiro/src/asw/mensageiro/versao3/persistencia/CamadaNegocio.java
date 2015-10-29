@@ -13,7 +13,7 @@ public class CamadaNegocio {
 	}
 	public List<String> listarMensagens(){
 		
-		return Arrays.asList(dados.getDiretorio().list());
+		return dados.listarMensagens();
 		
 	}
 	

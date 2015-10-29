@@ -11,6 +11,8 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class CamadaDadosHsqldb implements CamadaDados {
 
@@ -66,23 +68,38 @@ public class CamadaDadosHsqldb implements CamadaDados {
 
 	public String lerMensagem(String nomeMsg) throws MensagemNaoEncontradaException {
 
-		
-		
-		
 		try {
 			PreparedStatement pSt = conexao
 					.prepareStatement("SELECT mensagem FROM MENSAGENS where nome = '" + nomeMsg + "'");
 			ResultSet resultado = pSt.executeQuery();
-			if (resultado.next()) return resultado.getString("mensagem");
+			if (resultado.next())
+				return resultado.getString("mensagem");
 		} catch (SQLException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
-		
 
-			return "aconteceu algum erro no carregamento da mensagem ou mensagem não encontrada";
-			// throw new RuntimeException(e);
-		}
+		return "aconteceu algum erro no carregamento da mensagem ou mensagem não encontrada";
+		// throw new RuntimeException(e);
 	}
 
+	@Override
+	public List<String> listarMensagens() {
+		List<String> a = new ArrayList<String>();
 
+		PreparedStatement pSt;
+		try {
+			pSt = conexao.prepareStatement("SELECT nome FROM MENSAGENS");
+			ResultSet resultado = pSt.executeQuery();
+			while (resultado.next()) {
+				a.add(resultado.getString("nome"));
+
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return a;
+	}
+}

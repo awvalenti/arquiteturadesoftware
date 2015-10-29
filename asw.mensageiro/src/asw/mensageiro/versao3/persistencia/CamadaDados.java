@@ -1,6 +1,7 @@
 package asw.mensageiro.versao3.persistencia;
 
 import java.io.File;
+import java.util.List;
 
 public interface CamadaDados {
 	
@@ -13,5 +14,5 @@ public interface CamadaDados {
 	
 	public String lerMensagem(String nomeMsg)
 			throws MensagemNaoEncontradaException; 
-
+	public List<String> listarMensagens();
 }
