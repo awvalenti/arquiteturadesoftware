@@ -16,7 +16,8 @@ public class CamadaDadosHsqldb implements CamadaDados {
 
 	public CamadaDadosHsqldb() {
 		try {
-			conexao = DriverManager.getConnection("jdbc:hsqldb:hsql://localhost/");
+			conexao = DriverManager
+					.getConnection("jdbc:hsqldb:hsql://localhost/");
 		} catch (SQLException e) {
 			System.err.println("ERRO NA CONEXÃO SQL");
 			e.printStackTrace();
@@ -35,11 +36,11 @@ public class CamadaDadosHsqldb implements CamadaDados {
 	public boolean criarMensagem(String nomeMsg, String conteudo) {
 		int ret;
 		try {
-			PreparedStatement pSt = conexao.prepareStatement(
-					"insert into mensagens (nome,mensagem) values (?, ?)");
+			PreparedStatement pSt = conexao
+					.prepareStatement("insert into mensagens (nome,mensagem) values (?, ?)");
 			pSt.setString(1, nomeMsg);
 			pSt.setString(2, conteudo);
-		
+
 			ret = pSt.executeUpdate();
 		} catch (SQLException e) {
 
@@ -55,7 +56,8 @@ public class CamadaDadosHsqldb implements CamadaDados {
 	public void excluir(String nomeMsg) {
 
 		try {
-			PreparedStatement pSt = conexao.prepareStatement("DELETE FROM mensagens WHERE nome = ?");
+			PreparedStatement pSt = conexao
+					.prepareStatement("DELETE FROM mensagens WHERE nome = ?");
 			pSt.setString(1, nomeMsg);
 			pSt.executeUpdate();
 		} catch (SQLException e) {
@@ -65,7 +67,8 @@ public class CamadaDadosHsqldb implements CamadaDados {
 
 	}
 
-	public String lerMensagem(String nomeMsg) throws MensagemNaoEncontradaException {
+	public String lerMensagem(String nomeMsg)
+			throws MensagemNaoEncontradaException {
 
 		try {
 			PreparedStatement pSt = conexao
@@ -99,7 +102,7 @@ public class CamadaDadosHsqldb implements CamadaDados {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 		return a;
 	}
 }

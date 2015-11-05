@@ -41,9 +41,11 @@ public class CamadaDadosDiretorioTemp implements CamadaDados {
 
 		return true;
 	}
-	public void excluir (String nomeMsg) {
+
+	public void excluir(String nomeMsg) {
 		new File(getDiretorio(), nomeMsg).delete();
 	}
+
 	public String lerMensagem(String nomeMsg)
 			throws MensagemNaoEncontradaException {
 
@@ -68,8 +70,8 @@ public class CamadaDadosDiretorioTemp implements CamadaDados {
 
 	@Override
 	public List<String> listarMensagens() {
-		
-		return  Arrays.asList(getDiretorio().list());
+
+		return Arrays.asList(getDiretorio().list());
 	}
 
 }

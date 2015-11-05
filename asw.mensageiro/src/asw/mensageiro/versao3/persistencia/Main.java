@@ -6,11 +6,12 @@ public class Main {
 
 	public static void main(String[] args) {
 		CamadaDados dados = null;
-		System.out.println("Selecione o armazenamento desejado: \n 1 - diretorio temp \n 2 - HSQL");
+		System.out
+				.println("Selecione o armazenamento desejado: \n 1 - diretorio temp \n 2 - HSQL");
 		Scanner scanner = new Scanner(System.in);
 		System.out.print("> ");
 		String linhaLida = scanner.nextLine();
-		
+
 		switch (linhaLida) {
 		case "1": {
 			dados = new CamadaDadosDiretorioTemp();
@@ -22,12 +23,12 @@ public class Main {
 		}
 		default: {
 			System.err.println("Selecao Invalida. Saindo...");
+			scanner.close();
 			return;
 
 		}
 		}
-		
-		
+
 		CamadaNegocio negocio = new CamadaNegocio(dados);
 		CamadaApresentacao apresentacao = new CamadaApresentacao(negocio);
 
