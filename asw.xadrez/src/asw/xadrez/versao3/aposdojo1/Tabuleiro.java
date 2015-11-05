@@ -24,4 +24,8 @@ public class Tabuleiro {
 		return casas[linha][coluna].getPeca();
 	}
 	
+	public void setPeca (int linha, int coluna, Peca peca) {
+		casas[linha][coluna].setPeca(peca);
+	}
+	
 }

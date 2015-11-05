@@ -7,6 +7,7 @@ import javax.swing.JLabel;
 
 final class TratadorCliques extends MouseAdapter {
 	private JLabel casaOrigem;
+	
 
 	@Override
 	public void mousePressed(MouseEvent e) {
