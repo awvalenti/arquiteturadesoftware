@@ -1,11 +1,6 @@
 package asw.mensageiro.versao3.persistencia;
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -41,7 +36,10 @@ public class CamadaDadosHsqldb implements CamadaDados {
 		int ret;
 		try {
 			PreparedStatement pSt = conexao.prepareStatement(
-					"insert into mensagens (nome,mensagem) values ('" + nomeMsg + "', '" + conteudo + "')");
+					"insert into mensagens (nome,mensagem) values (?, ?)");
+			pSt.setString(1, nomeMsg);
+			pSt.setString(2, conteudo);
+		
 			ret = pSt.executeUpdate();
 		} catch (SQLException e) {
 
@@ -57,7 +55,8 @@ public class CamadaDadosHsqldb implements CamadaDados {
 	public void excluir(String nomeMsg) {
 
 		try {
-			PreparedStatement pSt = conexao.prepareStatement("DELETE FROM mensagens WHERE nome = '" + nomeMsg + "'");
+			PreparedStatement pSt = conexao.prepareStatement("DELETE FROM mensagens WHERE nome = ?");
+			pSt.setString(1, nomeMsg);
 			pSt.executeUpdate();
 		} catch (SQLException e) {
 			System.err.println("ERRO NA CONEXÃO SQL");
@@ -70,7 +69,8 @@ public class CamadaDadosHsqldb implements CamadaDados {
 
 		try {
 			PreparedStatement pSt = conexao
-					.prepareStatement("SELECT mensagem FROM MENSAGENS where nome = '" + nomeMsg + "'");
+					.prepareStatement("SELECT mensagem FROM MENSAGENS where nome = ?");
+			pSt.setString(1, nomeMsg);
 			ResultSet resultado = pSt.executeQuery();
 			if (resultado.next())
 				return resultado.getString("mensagem");

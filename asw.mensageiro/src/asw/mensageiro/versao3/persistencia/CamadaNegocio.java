@@ -1,7 +1,5 @@
 package asw.mensageiro.versao3.persistencia;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class CamadaNegocio {

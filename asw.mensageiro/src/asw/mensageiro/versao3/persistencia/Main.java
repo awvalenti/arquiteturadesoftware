@@ -10,7 +10,7 @@ public class Main {
 		Scanner scanner = new Scanner(System.in);
 		System.out.print("> ");
 		String linhaLida = scanner.nextLine();
-		scanner.close();
+		
 		switch (linhaLida) {
 		case "1": {
 			dados = new CamadaDadosDiretorioTemp();
@@ -32,6 +32,7 @@ public class Main {
 		CamadaApresentacao apresentacao = new CamadaApresentacao(negocio);
 
 		apresentacao.menu();
+		scanner.close();
 	}
 
 }
