@@ -23,7 +23,7 @@ public class MainOO {
 				{GRAMA, PERSONAGEM, GRAMA, GRAMA, GRAMA, GRAMA, GRAMA, GRAMA, GRAMA, GRAMA, GRAMA, GRAMA, GRAMA, GRAMA, GRAMA},
 		};
 
-		TelaInicialOO tela1 = new TelaInicialOO(disposicaoInicial1);
+		new TelaInicialOO(disposicaoInicial1);
 
 
 		final Elemento[][] disposicaoInicial2 = {
@@ -33,7 +33,7 @@ public class MainOO {
 				{GRAMA, PERSONAGEM, GRAMA, GRAMA, GRAMA, GRAMA, GRAMA, GRAMA},
 		};
 
-		TelaInicialOO tela2 = new TelaInicialOO(disposicaoInicial2);
+		new TelaInicialOO(disposicaoInicial2);
 	}
 
 }
