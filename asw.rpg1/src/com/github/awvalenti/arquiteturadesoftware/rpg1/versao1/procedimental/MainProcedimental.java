@@ -136,6 +136,28 @@ public class MainProcedimental {
 					}
 					break;
 				case 40:
+					for (int i = 9; i >= 0; --i) {
+						for (int j = 13; j >= 0; --j) {
+							if (posicoes[i][j] == 2) {
+								if (posicoes[i + 1][j] == 0) {
+									JOptionPane.showMessageDialog(frame, "Perdeu!", "Perdeu!", JOptionPane.ERROR_MESSAGE);
+									System.exit(0);
+								}
+								if (posicoes[i + 1][j] == 1) {
+									++main.coletados;
+									if (main.coletados == 3) {
+										JOptionPane.showMessageDialog(frame, "Ganhou!", "Ganhou!", JOptionPane.INFORMATION_MESSAGE);
+										System.exit(0);
+									}
+								}
+								posicoes[i][j] = 3;
+								((JLabel) frame.getContentPane().getComponent(i * 15 + j)).setIcon(icone(3));
+								posicoes[i + 1][j] = 2;
+								((JLabel) frame.getContentPane().getComponent((i + 1) * 15 + j)).setIcon(icone(2));
+								break;
+							}
+						}
+					}
 					break;
 				}
 			}
