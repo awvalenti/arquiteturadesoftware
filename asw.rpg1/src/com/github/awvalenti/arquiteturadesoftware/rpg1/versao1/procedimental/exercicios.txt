@@ -1,0 +1,24 @@
+Leia a classe chamada MainProcedimental para responder às questões abaixo.
+
+
+1) Do ponto de vista do usuário, que problemas existem no jogo?
+
+
+2) Do ponto de vista do programador, que problemas existem no jogo?
+
+
+3) Diga em que linhas do código está localizada a lógica que cuida de:
+	a) Carregar as imagens usadas no jogos
+	b) Definir a quantidade de linhas e colunas do tabuleiro
+	c) Manipular o objeto JFrame, que representa a janela do jogo
+	d) Verificar se o jogo já acabou
+
+
+4) Deseja-se fazer algumas mudanças no jogo. Explique, com palavras, que
+	alterações seriam necessárias no código para cada mudança desejada.
+	a) Adicionar um novo elemento: moeda
+	b) Avançar duas casas por vez quando segurar a tecla SHIFT
+	c) Controlar o personagem com o mouse, clicando nas casas adjacentes
+	d) Quando o jogador perde, em vez de fechar o jogo, reiniciar a fase
+	e) Criar novas fases, com mais maçãs
+	f) Criar novas fases, com tamanho maior do que 10x15

@@ -1,28 +1,3 @@
-// Leia o código abaixo e responda às seguintes questões:
-//
-//
-// 1) Do ponto de vista do usuário, que problemas existem no jogo?
-//
-//
-// 2) Do ponto de vista do programador, que problemas existem no jogo?
-//
-//
-// 3) Diga em que linhas do código está localizada a lógica que cuida de:
-// 	a) Carregar as imagens usadas no jogos
-// 	b) Definir a quantidade de linhas e colunas do tabuleiro
-// 	c) Manipular o objeto JFrame, que representa a janela do jogo
-// 	d) Verificar se o jogo já acabou
-//
-//
-// 4) Deseja-se fazer algumas mudanças no jogo. Para fazê-las, é necessário alterar
-//    o código de determinadas maneiras. Explique, com palavras, que alterações no código
-//    são necessárias para cada mudança desejada.
-// 	a) Adicionar um novo elemento: moeda
-// 	b) Avançar duas casas por vez quando segurar a tecla SHIFT
-// 	c) Controlar o personagem com o mouse, clicando nas casas adjacentes
-// 	d) Criar novas fases, com mais maçãs
-// 	e) Criar novas fases, com tamanho maior do que 10x15
-//
 package com.github.awvalenti.arquiteturadesoftware.rpg1.versao1.procedimental;
 
 import java.awt.GridLayout;
