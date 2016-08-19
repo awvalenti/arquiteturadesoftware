@@ -19,6 +19,7 @@ public class CamadaDados {
 	public File getDiretorio() {
 		return diretorio;
 	}
+
 	public File criarArquivo(String nomeMsg) throws IOException {
 		File arquivo = new File(getDiretorio(), nomeMsg);
 		arquivo.createNewFile();
@@ -32,13 +33,17 @@ public class CamadaDados {
 			writer.append(conteudo);
 			writer.close();
 
-		}catch (IOException e) {
+		} catch (IOException e) {
 			return false;
 		}
 
 		return true;
 	}
-	public String lerMensagem(String nomeMsg) {
+	public void excluir (String nomeMsg) {
+		new File(getDiretorio(), nomeMsg).delete();
+	}
+	public String lerMensagem(String nomeMsg)
+			throws MensagemNaoEncontradaException {
 
 		File arquivo;
 		arquivo = new File(getDiretorio(), nomeMsg);
@@ -49,11 +54,13 @@ public class CamadaDados {
 
 		} catch (FileNotFoundException e) {
 
-			throw new RuntimeException(e);
+			throw new MensagemNaoEncontradaException();
+			// throw new RuntimeException(e);
 
 		} catch (IOException e) {
 
-			throw new RuntimeException(e);
+			return "aconteceu algum erro no carregamento do arquivo";
+			// throw new RuntimeException(e);
 		}
 	}
 
