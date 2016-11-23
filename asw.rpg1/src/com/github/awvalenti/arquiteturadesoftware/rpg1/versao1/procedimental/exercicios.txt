@@ -14,7 +14,7 @@ Leia a classe chamada MainProcedimental para responder às questões abaixo.
 	d) Verificar se o jogo já acabou
 
 
-4) Deseja-se fazer algumas mudanças no jogo. Explique, com palavras, que
+4) Desejam-se fazer algumas mudanças no jogo. Explique, com palavras, que
 	alterações seriam necessárias no código para cada mudança desejada.
 	a) Adicionar um novo elemento: moeda
 	b) Avançar duas casas por vez quando segurar a tecla SHIFT
